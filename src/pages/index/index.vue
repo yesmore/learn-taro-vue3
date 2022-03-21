@@ -1,24 +1,23 @@
 <template>
   <view class="index">
-    <view>
-      <img src="" alt="" />
-    </view>
-    {{ state.msg }}
     <view class="btn">
       <nut-button type="primary" @click="handleClick('text', state.msg2, true)">点我</nut-button>
     </view>
     <Counter />
     <nut-toast
-      :msg="state.msg"
+      :msg="state.msg2"
       v-model:visible="state.show"
       :type="state.type"
       :cover="state.cover"
     />
 
     <nut-button @click="goRequest">跳转接口测试页面</nut-button>
-    <nut-button @click="goCss">跳转样式测试页面</nut-button>
+    <!-- <nut-button @click="goCss">跳转样式测试页面</nut-button> -->
     <nut-button @click="goPinia">跳转Pinia测试页面</nut-button>
     <nut-button @click="goNutUi">跳转NutUi测试页面</nut-button>
+
+    <navigator url="/pages/index/index">跳转首页</navigator>
+    <navigator url="/pages/featureA/css/index">跳转样式测试页面</navigator>
   </view>
 </template>
 
@@ -28,8 +27,7 @@ import Taro from '@tarojs/taro'
 import Counter from '@/components/Counter.vue'
 
 const state = reactive({
-  msg: '欢迎使用 NutUI3.0 开发小程序',
-  msg2: '你成功了～',
+  msg2: '表锅, 我粗来咯~',
   type: 'text',
   show: false,
   cover: false,
@@ -45,9 +43,9 @@ const handleClick = (type, msg, cover = false) => {
 const goRequest = () => {
   Taro.navigateTo({ url: '/pages/featureA/request/index' })
 }
-const goCss = () => {
-  Taro.navigateTo({ url: '/pages/featureA/css/index' })
-}
+// const goCss = () => {
+//   Taro.navigateTo({ url: '/pages/featureA/css/index' })
+// }
 const goPinia = () => {
   Taro.navigateTo({ url: '/pages/featureA/index/index' })
 }

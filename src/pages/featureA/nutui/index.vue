@@ -34,6 +34,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { Dialog as NutDialog, Cell as NutCell } from '@nutui/nutui-taro'
+
 const visible1 = ref(false)
 const visible2 = ref(false)
 const visible3 = ref(false)
