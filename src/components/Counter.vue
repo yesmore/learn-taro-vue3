@@ -1,19 +1,19 @@
 <template>
   <view>
-    <text class="title">{{ counter.count }}</text>
+    <text class="title">{{ counter.number }}</text>
     <view class="button" @tap="onAdd">ADD</view>
   </view>
 </template>
 
 <script>
-import { useCounterStore } from '../stores/counter'
+import { useCounter } from '@/stores/count'
 
 export default {
   setup() {
-    const counter = useCounterStore()
+    const counter = useCounter()
 
     const onAdd = () => {
-      counter.count++
+      counter.number++
 
       // with autocompletion ✨
       // counter.$patch({count: counter.count + 1})
@@ -24,9 +24,9 @@ export default {
 
     return {
       counter,
-      onAdd
+      onAdd,
     }
-  }
+  },
 }
 </script>
 

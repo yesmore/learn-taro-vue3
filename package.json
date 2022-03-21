@@ -36,7 +36,7 @@
     "ios >= 8"
   ],
   "author": "",
-  "license": "MIT",
+  "license": "GPL",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@nutui/nutui-taro": "^3.1.8",
@@ -46,6 +46,7 @@
     "@tarojs/runtime": "3.4.3",
     "@tarojs/taro": "3.4.3",
     "pinia": "^2.0.12",
+    "taro-axios": "^1.1.1",
     "taro-plugin-pinia": "^1.0.0",
     "vue": "^3.0.0"
   },
@@ -66,6 +67,7 @@
     "eslint-config-taro": "3.4.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0",
+    "cz-customizable": "^6.3.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "stylelint": "9.3.0",
@@ -79,10 +81,15 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": [
-      "yarn lint",
+    "src/**/*.{js,jsx,vue,ts,tsx}": [
+
       "prettier --write",
       "git add"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   }
 }
